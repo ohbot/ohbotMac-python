@@ -13,4 +13,7 @@ setup(
     download_url = 'https://github.com/ohbot/ohbotWin-python/archive/1.1.tar.gz',
     keywords = ['ohbot', 'robot'],
     classifiers = [],
+    install_requires=[
+          'markdown',
+      ],
 )
