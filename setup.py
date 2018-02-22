@@ -1,8 +1,8 @@
 from distutils.core import setup
 
 setup(
-    name = 'ohbot',
-    packages = ['ohbot'],
+    name = 'ohbotWin',
+    packages = ['ohbotWin'],
     package_data={'': ['MotorDefinitionsv21.omd','Silence1.wav']},
     include_package_data=True,
     version = '2.3',  
