@@ -1,11 +1,23 @@
-# ohbot for python
+# ohbot for python (windows version)
 
 <a href="http://whoosh.co.uk/ohbothelp/images/eyes.gif" target="_blank"><img src="http://whoosh.co.uk/ohbothelp/images/eyes.gif" border="0" width = "30%"/></a>
 
 
-This package is a starting point for people wanting to use Python 3 to control Ohbot. 
+Background
+These instructions allow you to program your Windows Ohbot or Raspberry Pi Ohbot using Python on a Windows PC.
 
 More information about Ohbot can be found on [ohbot.co.uk](http://www.ohbot.co.uk)
+
+
+Install latest version of Python from here.
+
+[python.org](https://www.python.org/downloads/release/python-364/)
+
+I chose version 3.6 Windows x86-64 executable installer.
+
+During the Install make sure that the pip option is selected
+
+<a href="https://github.com/ohbot/ohbotWin-python/blob/master/images/image1-22.png" target="_blank"><img src="https://github.com/ohbot/ohbotWin-python/blob/master/images/image1-22.png" border="0" width = "30%"/></a>
 
 Dependencies
 ----------
@@ -18,14 +30,14 @@ sudo apt-get install python3-pip
 
 Ohbot requires the following libraries be installed:
 
-To install libraries execute the corresponding terminal commands in your Raspberry Pi terminal:
+
 
 | Library    | Use         | Terminal command to install  |Link |
 | ---------- |-------------| -----------------------------|-----|
-| ohbot   | Interface with Ohbot          | ```sudo pip3 install ohbot```  |[ohbot](https://github.com/ohbot/ohbot/) |
-| serial    | Communicate with serial port| ```sudo pip3 install pyserial```  |[pyserial](https://github.com/pyserial/pyserial/) |
-| festival    | Generate text to speech  | ```sudo apt-get install festival```  |- |
-| lxml    | Import settings file          | ```sudo apt-get install python3-lxml```  |[lxml](https://github.com/lxml/lxml) |
+| ohbotWin   | Interface with Ohbot          | ```pip install ohbotWin```  |[ohbot](https://github.com/ohbot/ohbotWin-python/) |
+| serial    | Communicate with serial port| ```pip install pyserial```  |[pyserial](https://github.com/pyserial/pyserial/) |
+| lxml    | Import settings file          | ```pip install lxml```  |[lxml](https://github.com/lxml/lxml) |
+| comtypes    | Required for serial communication      | ```pip install comtypes```  |[lxml](https://github.com/lxml/lxml) |
 | threading    | Run multiple threads     | Included in Python 3  |- |
 | os    | Send commands to festival       | Included in Python 3  |- |
 | time    | Run timers                    | Included in Python 3  |- |
@@ -34,7 +46,7 @@ To install libraries execute the corresponding terminal commands in your Raspber
 Ohbot is tested with Python 3 running on a Raspberry Pi 3 Model B. 
 
 To upgrade to the latest version of the library run the following in the console:
-```sudo pip3 install ohbot -- upgrade```
+```pip3 install ohbotWin -- upgrade```
 
 
 
