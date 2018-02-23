@@ -323,11 +323,11 @@ ohbot.setVoice(voice)
 
 Use any of the following arguments:
 
-| Name| Effect|
+| Name| Description|
 | --- |------|
 | -a0 to -a100   | amplitude |
 | -r-10 to r10   | rate |
-| -v any part of the name of a SAPI voice   | -vHazel, -vZira |
+| -v any part of the name of a SAPI voice (eg. -vHazel or -vZira) | voice |
 
 e.g. ``-a82 -r12 -vzira``<br>
 
@@ -335,7 +335,7 @@ e.g. ``-a82 -r12 -vzira``<br>
 
 http://espeak.sourceforge.net/commands.html<br>
 
-| Name| Effect|
+| Name| Description|
 | --- |------|
 | -v followed by a letter code|look in program files\espeak\espeak-data\voices to see what's available|
 | +m1 to +m7   | male voices |
