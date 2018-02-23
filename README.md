@@ -17,7 +17,7 @@ I chose version 3.6 Windows x86-64 executable installer.
 
 During the Install make sure that the pip option is selected
 
-<a href="https://github.com/ohbot/ohbotWin-python/blob/master/images/image1-22.png" target="_blank"><img src="https://github.com/ohbot/ohbotWin-python/blob/master/images/image1-22.png" border="0" width = "30%"/></a>
+<a href="https://github.com/ohbot/ohbotWin-python/blob/master/images/image1-22.png" target="_blank"><img src="https://github.com/ohbot/ohbotWin-python/blob/master/images/image1-22.png" border="0" width = "80%"/></a>
 
 Dependencies
 ----------
