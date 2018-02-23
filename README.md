@@ -359,13 +359,13 @@ http://espeak.sourceforge.net/commands.html<br>
 |   -p0 to p99   | pitch |
 
 
-Examples
-|Command|Result|
-|------|-------|
+Examples:<br>
 
-|``ohbot.setVoice("-ven+croak")``| English croaky voice|
-|``ohbot.setVoice("-vzh+m2 -s26")``| Chinese male voice, Fast |
-|``ohbot.setVoice("-vfr+f1 -p99 -s180")``|French female whisper voice, medium speed and high pitched|
+| Command | Result |
+| ------ | ------- |
+| ``ohbot.setVoice("-ven+croak")`` | English croaky voice |
+| ``ohbot.setVoice("-vzh+m2 -s26")`` | Chinese male voice, Fast |
+| ``ohbot.setVoice("-vfr+f1 -p99 -s180")`` | French female whisper voice, medium speed and high pitched |
 
 
 
