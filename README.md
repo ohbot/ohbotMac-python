@@ -17,7 +17,7 @@ Setup
 Install the latest version of Python from [here.](https://www.python.org/downloads/release/python-364/)
 
 
-<a href="https://github.com/ohbot/ohbotWin-python/blob/master/images/image1-22.png" target="_blank"><img src="https://github.com/ohbot/ohbotWin-python/blob/master/images/image1-22.png" border="0" width = "80%"/></a>
+<a href="https://github.com/ohbot/ohbotWin-python/blob/master/images/image1-22.png" target="_blank"><img src="https://github.com/ohbot/ohbotWin-python/blob/master/images/image1-22.png" border="0" width = "65%"/></a>
 
 We chose version 3.6 Windows x86-64 executable installer.
 
@@ -307,17 +307,24 @@ ohbot.move(ohbot.HEADTURN, reading)
 ohbot.setSynthesizer(synth)
 ----------
 
-Use ohbot.setSynthesizer (“sapi”) to use SAPI speech<br>
-Use ohbot.setSynthesizer (“espeak-ng”) to espeak-ng speech<br>
-Use ohbot.setSynthesizer (“espeak”) to use espeak speech<br>
+|synth|Full Name|
+|“sapi”|SAPI speech|
+|“espeak-ng”|espeak-ng speech|
+|“espeak”|espeak speech|
+
+
+For Example:
+```python
+ohbot.setSynthesizer(“espeak”)
+```
 
 Note that the SAPI speech uses the voices available in Control Panel:Text to Speech.   It can’t use Cortana voices.
 
-Use ohbot.setVoice() to set the voice depending on the synthesizer:
 
 ohbot.setVoice(voice)
 ------
 
+Use ohbot.setVoice() to set the voice depending on the synthesizer:
 
 <b>Using SAPI</b>
 
@@ -329,7 +336,13 @@ Use any of the following arguments:
 | -r-10 to r10   | rate |
 | -v any part of the name of a SAPI voice (eg. -vHazel or -vZira) | voice |
 
-e.g. ``-a82 -r12 -vzira``<br>
+For Example:
+```python
+reading = ohbot.readSensor(3)
+
+ohbot.setVoice("-a82 -r12 -vzira")
+
+```
 
 <b>Using ESPEAK</b>
 
@@ -350,9 +363,9 @@ Examples
 |Command|Result|
 |------|-------|
 
-|``-ven+croak``| English croaky voice|
-|``-vzh+m2 -s26``| Chinese male voice, Fast |
-|``-vfr+f1 -p99 -s180``|French female whisper voice, medium speed and high pitched|
+|``ohbot.setVoice("-ven+croak")``| English croaky voice|
+|``ohbot.setVoice("-vzh+m2 -s26")``| Chinese male voice, Fast |
+|``ohbot.setVoice("-vfr+f1 -p99 -s180")``|French female whisper voice, medium speed and high pitched|
 
 
 
