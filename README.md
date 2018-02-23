@@ -135,6 +135,8 @@ Select <b>Run Module</b> from the <b>Run</b> menu.
 
 Ohbot should speak and move.
 
+More example programs can be found [here.](https://github.com/ohbot/ohbotWin-python/tree/master/examples)
+
 
 Functions
 -------
