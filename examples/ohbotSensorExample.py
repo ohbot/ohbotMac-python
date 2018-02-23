@@ -1,4 +1,4 @@
-from ohbot import ohbot
+from ohbotWin import ohbot
 
 ## Example program for using sensors with ohbot.
 ## Tilt sensor - a3
