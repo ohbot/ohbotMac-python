@@ -1,4 +1,4 @@
-# ohbot for python (windows version)
+# Ohbot for Python (Windows Version)
 
 <a href="http://whoosh.co.uk/ohbothelp/images/eyes.gif" target="_blank"><img src="http://whoosh.co.uk/ohbothelp/images/eyes.gif" border="0" width = "30%"/></a>
 
