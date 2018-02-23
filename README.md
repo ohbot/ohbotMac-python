@@ -354,7 +354,4 @@ e.g.'-ven+croak' for English croaky voice or '-vzh+m2 -s26' for fast Chinese mal
 supports some of the ESPEAK parameters but some are missing
 
 
-**_Press fn + f5 to run your program_**
-
-
 
