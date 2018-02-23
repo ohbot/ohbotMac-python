@@ -367,7 +367,7 @@ Examples:<br>
 | ``ohbot.setVoice("-vzh+m2 -s26")`` | Chinese male voice, Fast |
 | ``ohbot.setVoice("-vfr+f1 -p99 -s180")`` | French female whisper voice, medium speed and high pitched |
 
-
+More examples can be found in our [voices example program.](https://github.com/ohbot/ohbotWin-python/blob/master/examples/voices.py)
 
 <b>Using ESPEAK-NG</b>
 
