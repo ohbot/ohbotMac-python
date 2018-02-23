@@ -319,26 +319,37 @@ ohbot.setVoice(voice)
 ------
 
 
-<b>SAPI</b>
+<b>Using SAPI</b>
 
--a0 to -a100 for amplitude<br>
--r-10 to r10 for rate<br>
--v any part of the name of a SAPI voice e.g. -vHazel, -vZira<br>
-e.g. "-a82 -r12 -vzira"<br>
+Use any of the following arguments:
 
-<b>ESPEAK</b>
+| Name| Effect|
+| --- |------|
+| -a0 to -a100   | amplitude |
+| -r-10 to r10   | rate |
+| -v any part of the name of a SAPI voice   | -vHazel, -vZira |
+
+e.g. ``-a82 -r12 -vzira``<br>
+
+<b>Using ESPEAK</b>
 
 http://espeak.sourceforge.net/commands.html<br>
--v followed by a letter code - look in program files\espeak\espeak-data\voices to see what's available<br>
-+m1 to +m7 for male voices<br>
-+f1 to +f4 for female voices<br>
-+croak or +whisper<br>
--a for amplitude (0 to 200)<br>
--s for speed 80 to 500<br>
--p for pitech 0 to 99<br>
-e.g. “-ven+croak” for English croaky voice or “-vzh+m2 -s260” for fast Chinese male.<br>
 
-<b>ESPEAK-NG</b>
+| Name| Effect|
+| --- |------|
+| -v followed by a letter code|look in program files\espeak\espeak-data\voices to see what's available|
+| +m1 to +m7   | male voices |
+| +f1 to +f4   | remale voices |
+| +croak or +whisper   | tone |
+| -a0 - -a200   | amplitude |
+| -s80 - -s500   | speed |
+| -p0 - -p99   | pitch |
+
+e.g.'-ven+croak' for English croaky voice or '-vzh+m2 -s26' for fast Chinese male.<br>
+
+
+
+<b>Using ESPEAK-NG</b>
 
 supports some of the ESPEAK parameters but some are missing
 
