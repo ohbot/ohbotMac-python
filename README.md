@@ -4,10 +4,15 @@
 
 
 Background
+-----
+
 These instructions allow you to program your Windows Ohbot or Raspberry Pi Ohbot using Python on a Windows PC.
 
 More information about Ohbot can be found on [ohbot.co.uk](http://www.ohbot.co.uk)
 
+
+Setup
+--------
 
 Install latest version of Python from [here.](https://www.python.org/downloads/release/python-364/)
 
@@ -24,18 +29,50 @@ Once install is complete type “Command” into the Windows search box.  Right 
 
 <a href="https://github.com/ohbot/ohbotWin-python/blob/master/images/image2-24.tif" target="_blank"><img src="https://github.com/ohbot/ohbotWin-python/blob/master/images/image2-24.tif" border="0" width = "35%"/></a>
 
+<br>
+
+This will open a command prompt window.  Navigate to the location where pip is installed.  I did this by typing the following
+``Cd \program files\python36\scripts``
+
+Type the folloing:
+
+``pip install ohbotWin``
+
+
+Installing more voices (optional)
+--------
+
+The Ohbot Python library will default to using SAPI voices which are the voices that are available through Windows Control Panel:Speech Propeties.
+
+You can change this to espeak or espeak-ng by calling ohbot.setSynthesiser (“espeak”) or ohbot.setSynthesizer (“espeak-ng”).
+
+Install the espeak library from [here.](http://espeak.sourceforge.net/download.html):
+
+
+Install espeak and then copy the espeak.exe file in Windows File Explorer from 
+
+C:\Program Files (x86)\eSpeak\command_line
+
+To 
+
+C:\Program Files\Python36
+
+To use the espeak-ng library install it from [here.](https://github.com/espeak-ng/espeak-ng#binaries)
+
+Install espeak-ng and then copy the espeak-ng.exe and espeak-ng.dll files in Windows File Explorer from 
+
+C:\Program Files\eSpeak NG
+
+To 
+
+C:\Program Files\Python36
+
+That should be it for the setup.
 
 Dependencies
 ----------
 
-If you don't have pip3 (the python 3 package manager) installed, open terminal and execute the following:
-
-```
-sudo apt-get install python3-pip
-```
-
-Ohbot requires the following libraries be installed:
-
+The ``pip install ohbotWin`` command will install the following libraries:
 
 
 | Library    | Use         | Terminal command to install  |Link |
@@ -44,26 +81,21 @@ Ohbot requires the following libraries be installed:
 | serial    | Communicate with serial port| ```pip install pyserial```  |[pyserial](https://github.com/pyserial/pyserial/) |
 | lxml    | Import settings file          | ```pip install lxml```  |[lxml](https://github.com/lxml/lxml) |
 | comtypes    | Required for serial communication      | ```pip install comtypes```  |[lxml](https://github.com/lxml/lxml) |
-| threading    | Run multiple threads     | Included in Python 3  |- |
-| os    | Send commands to festival       | Included in Python 3  |- |
-| time    | Run timers                    | Included in Python 3  |- |
 
-
-Ohbot is tested with Python 3 running on a Raspberry Pi 3 Model B. 
 
 To upgrade to the latest version of the library run the following in the console:
-```pip3 install ohbotWin -- upgrade```
+```pip install ohbotWin -- upgrade```
 
 
 
-Ohbot library files (these will be installed with the `pip3 install ohbot` command above):
+Ohbot library files (these will be installed with the `pip install ohbotWin` command above):
 
 | File    | Use         |
 | ---------- |------------|
 | ohbot.py   | Ohbot package |
 | MotorDefinionsv21.omd    | Motor settings file |
 
-_Note: The text to speech module Festival will generate an audio file, ‘ohbotspeech.wav’ and a text file ‘phonemes.txt’ inside your working folder._
+_Note: The text to speech module will generate an audio file, ‘ohbotspeech.wav’ and a text file ‘phonemes.txt’ inside your working folder._
 
 ---
 
@@ -73,37 +105,40 @@ Hardware
 Required:
 
 
-* Raspberry Pi
+* PC Running windows (? and up)
 * Ohbot
 * USB Y Cable
 * USB Power Socket Adaptor
-* Speakers/headphones with 3.5mm headphone jack
+* Speakers/headphones.
 
 
 Setup:
 
 
-
-Plug the middle of USB Y cable into Raspberry Pi and the other large USB plug into the power adaptor. Then plug the mini USB into Ohbot. Finally plug your speakers into your Raspberry Pi. 
+Plug the middle of USB Y cable into the PC and the other large USB plug into the power adaptor. Then plug the mini USB into Ohbot.
 
 ---
 
-Writing Programs
+Starting Python Programs
 --------
 
-1. Open Python 3 (IDLE)
-2. Click File → New File
-3. Save your file as a python script (.py) in a new folder called Ohbot somewhere on your Pi.
+Go to the Windows Menu and run IDLE from the Python folder:
 
-Import
--------
 
-Make sure you import ohbot at the start of your program. 
-```python
-from ohbot import ohbot
-```
+<a href="https://github.com/ohbot/ohbotWin-python/blob/master/images/image3-26.tif" target="_blank"><img src="https://github.com/ohbot/ohbotWin-python/blob/master/images/image3-26.tif" border="0" width = "35%"/></a>
 
----
+
+Select <b>New</b> from the <b>File menu.</b>
+
+Go to the [hellworldohbot](https://github.com/ohbot/ohbotWin-python/blob/master/examples/helloworldohbot.py) example on Github
+
+
+Copy the code and paste it into the new Python window.
+
+Select <b>Run Module</b> from the <b>Run</b> menu.
+
+Ohbot should speak and move.
+
 
 Functions
 -------
@@ -270,6 +305,42 @@ reading = ohbot.readSensor(3)
 ohbot.move(ohbot.HEADTURN, reading)
 
 ```
+ohbot.setSynthesizer(synth)
+----------
+
+Use ohbot.setSynthesizer (“sapi”) to use SAPI speech
+Use ohbot.setSynthesizer (“espeak-ng”) to espeak-ng speech
+Use ohbot.setSynthesizer (“espeak”) to use espeak speech
+
+Note that the SAPI speech uses the voices available in Control Panel:Text to Speech.   It can’t use Cortana voices.
+
+Use ohbot.setVoice() to set the voice depending on the synthesizer:
+
+
+<b>SAPI</b>
+
+-a0 to -a100 for amplitude
+-r-10 to r10 for rate
+-v any part of the name of a SAPI voice e.g. -vHazel, -vZira
+e.g. "-a82 -r12 -vzira"
+
+<b>ESPEAK</b>
+
+http://espeak.sourceforge.net/commands.html
+-v followed by a letter code - look in program files\espeak\espeak-data\voices to see what's available
++m1 to +m7 for male voices
++f1 to +f4 for female voices
++croak or +whisper
+-a for amplitude (0 to 200)
+-s for speed 80 to 500
+-p for pitech 0 to 99
+e.g. “-ven+croak” for English croaky voice or “-vzh+m2 -s260” for fast Chinese male.
+
+<b>ESPEAK-NG</b>
+
+supports some of the ESPEAK parameters but some are missing
+
+
 
 **_Press fn + f5 to run your program_**
 
