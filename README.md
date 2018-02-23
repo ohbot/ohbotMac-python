@@ -154,7 +154,7 @@ ohbot.move(m, pos, speed=3)
 | Name| Range| Description | Default |
 | --- |------|-------------|---------|
 | m   | 0-6 (int)  | Motor Number| - |
-| pos | 0-10 (int)  | Desired Postition| - |
+| pos | 0-10 (int)  | Desired Position| - |
 | speed | 0-10 (int) | Motor Speed| 3 |
 
 
@@ -180,7 +180,7 @@ Motor index reference:
 ohbot.say(text, untilDone=True, lipSync=True, hdmiAudio=False, soundDelay=0)
 ----------
 
-| Name| Range| Description | Defualt |
+| Name| Range| Description | Default |
 | --- |------|-------------|---------|
 | text   | 'A string with no punctuation'  | Words to say| - |
 | untilDone | bool  | Return when finished speaking| True |
@@ -351,7 +351,7 @@ e.g.'-ven+croak' for English croaky voice or '-vzh+m2 -s26' for fast Chinese mal
 
 <b>Using ESPEAK-NG</b>
 
-supports some of the ESPEAK parameters but some are missing
+supports some of the ESPEAK parameters but some are missing.
 
 
 
