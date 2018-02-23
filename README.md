@@ -315,6 +315,9 @@ Note that the SAPI speech uses the voices available in Control Panel:Text to Spe
 
 Use ohbot.setVoice() to set the voice depending on the synthesizer:
 
+ohbot.setVoice(voice)
+------
+
 
 <b>SAPI</b>
 
@@ -338,7 +341,6 @@ e.g. “-ven+croak” for English croaky voice or “-vzh+m2 -s260” for fast C
 <b>ESPEAK-NG</b>
 
 supports some of the ESPEAK parameters but some are missing
-
 
 
 **_Press fn + f5 to run your program_**
