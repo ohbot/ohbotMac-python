@@ -345,7 +345,7 @@ http://espeak.sourceforge.net/commands.html<br>
 |   -s80 to a500   | speed |
 |   -p0 to p99   | pitch |
 
-e.g.'-ven+croak' for English croaky voice or '-vzh+m2 -s26' for fast Chinese male.<br>
+e.g.``-ven+croak`` for English croaky voice or ``-vzh+m2 -s26`` for fast Chinese male.<br>
 
 
 
