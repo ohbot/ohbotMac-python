@@ -342,16 +342,23 @@ http://espeak.sourceforge.net/commands.html<br>
 |   +f1 to f4   | remale voices |
 |   +croak or whisper   | tone |
 |   -a0 to a200   | amplitude |
-|   -s80 to a500   | speed |
+|   -s80 to s500   | speed |
 |   -p0 to p99   | pitch |
 
-e.g.``-ven+croak`` for English croaky voice or ``-vzh+m2 -s26`` for fast Chinese male.<br>
+
+Examples
+|Command|Result|
+|------|-------|
+
+|``-ven+croak``| English croaky voice|
+|``-vzh+m2 -s26``| Chinese male voice, Fast |
+|``-vfr+f1 -p99 -s180``|French female whisper voice, medium speed and high pitched|
 
 
 
 <b>Using ESPEAK-NG</b>
 
-supports some of the ESPEAK parameters but some are missing.
+Supports some of the ESPEAK parameters but some are missing.
 
 
 
