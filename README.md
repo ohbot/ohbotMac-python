@@ -306,15 +306,16 @@ ohbot.move(ohbot.HEADTURN, reading)
 ohbot.setSynthesizer(synth)
 ----------
 
-|synth|Full Name|
-|“sapi”|SAPI speech|
-|“espeak-ng”|espeak-ng speech|
-|“espeak”|espeak speech|
+| synth | Full Name |
+|----|-------- |
+| “sapi” | SAPI speech |
+| “espeak-ng” | espeak-ng speech |
+| “espeak” | espeak speech |
 
 
 For Example:
 ```python
-ohbot.setSynthesizer(“espeak”)
+ohbot.setSynthesizer("espeak")
 ```
 
 Note that the SAPI speech uses the voices available in Control Panel:Text to Speech.   It can’t use Cortana voices.
