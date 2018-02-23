@@ -8,7 +8,7 @@ Background
 
 These instructions allow you to program your Windows Ohbot or Raspberry Pi Ohbot using Python on a Windows PC.
 
-More information about Ohbot can be found on [ohbot.co.uk](http://www.ohbot.co.uk)
+More information about Ohbot can be found on [ohbot.co.uk.](http://www.ohbot.co.uk)
 
 
 Setup
@@ -31,7 +31,8 @@ Once install is complete type “Command” into the Windows search box.  Right 
 
 <br>
 
-This will open a command prompt window.  Navigate to the location where pip is installed.  I did this by typing the following
+This will open a command prompt window.  Navigate to the location where pip is installed.  I did this by typing the following:
+
 ``Cd \program files\python36\scripts``
 
 Type the folloing:
@@ -46,7 +47,7 @@ The Ohbot Python library will default to using SAPI voices which are the voices 
 
 You can change this to espeak or espeak-ng by calling ohbot.setSynthesiser (“espeak”) or ohbot.setSynthesizer (“espeak-ng”).
 
-Install the espeak library from [here.](http://espeak.sourceforge.net/download.html):
+Install the espeak library from [here.](http://espeak.sourceforge.net/download.html)
 
 
 Install espeak and then copy the espeak.exe file in Windows File Explorer from 
