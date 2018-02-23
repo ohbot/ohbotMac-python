@@ -338,12 +338,12 @@ http://espeak.sourceforge.net/commands.html<br>
 | Name| Description|
 | --- |------|
 | -v followed by a letter code|look in program files\espeak\espeak-data\voices to see what's available|
-| +m1 to +m7   | male voices |
-| +f1 to +f4   | remale voices |
-| +croak or +whisper   | tone |
-| -a0 - -a200   | amplitude |
-| -s80 - -s500   | speed |
-| -p0 - -p99   | pitch |
+|   +m1 to m7   | male voices |
+|   +f1 to f4   | remale voices |
+|   +croak or whisper   | tone |
+|   -a0 to a200   | amplitude |
+|   -s80 to a500   | speed |
+|   -p0 to p99   | pitch |
 
 e.g.'-ven+croak' for English croaky voice or '-vzh+m2 -s26' for fast Chinese male.<br>
 
