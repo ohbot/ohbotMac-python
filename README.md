@@ -14,7 +14,7 @@ More information about Ohbot can be found on [ohbot.co.uk.](http://www.ohbot.co.
 Setup
 --------
 
-Install latest version of Python from [here.](https://www.python.org/downloads/release/python-364/)
+Install the latest version of Python from [here.](https://www.python.org/downloads/release/python-364/)
 
 
 <a href="https://github.com/ohbot/ohbotWin-python/blob/master/images/image1-22.png" target="_blank"><img src="https://github.com/ohbot/ohbotWin-python/blob/master/images/image1-22.png" border="0" width = "80%"/></a>
