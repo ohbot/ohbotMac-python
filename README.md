@@ -145,13 +145,13 @@ Functions
 ohbot.init(portName)
 ----------
 
-Called internally using portName = "ttyACM" but if your port is different you can call it and override this port name. It returns True if the port is found and opened successfully, otherwise it returns false. 
+Called internally looking for a port with name containing "USB Serial Device" but if your port is different you can call it and override this port name. It returns True if the port is found and opened successfully, otherwise it returns false. This is likely with a versions of Windows in languages other than English. 
 
 ohbot.move(m, pos, speed=3)
 ----------
 
 
-| Name| Range| Description | Defualt |
+| Name| Range| Description | Default |
 | --- |------|-------------|---------|
 | m   | 0-6 (int)  | Motor Number| - |
 | pos | 0-10 (int)  | Desired Postition| - |
