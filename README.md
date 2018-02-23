@@ -79,7 +79,7 @@ The ``pip install ohbotWin`` command will install the following libraries:
 | ohbotWin   | Interface with Ohbot          | ```pip install ohbotWin```  |[ohbot](https://github.com/ohbot/ohbotWin-python/) 
 | serial    | Communicate with serial port| ```pip install pyserial```  |[pyserial](https://github.com/pyserial/pyserial/) |
 | lxml    | Import settings file          | ```pip install lxml```  |[lxml](https://github.com/lxml/lxml) |
-| comtypes    | Required for serial communication      | ```pip install comtypes```  |[comtypes] (https://github.com/enthought/comtypes) |
+| comtypes    | Required for serial communication      | ```pip install comtypes```  | [comtypes](https://github.com/enthought/comtypes) |
 
 
 To upgrade to the latest version of the library run the following in the console:
@@ -129,7 +129,7 @@ Go to the Windows Menu and run IDLE from the Python folder:
 
 Select <b>New</b> from the <b>File menu.</b>
 
-Go to the [hellworldohbot example on Github](https://github.com/ohbot/ohbotWin-python/blob/master/examples/helloworldohbot.py) and copy the code and paste it into the new Python window.
+Go to the [hellworldohbot](https://github.com/ohbot/ohbotWin-python/blob/master/examples/helloworldohbot.py) example on Github, copy the code and paste it into the new Python window.
 
 Select <b>Run Module</b> from the <b>Run</b> menu.
 
