@@ -320,22 +320,22 @@ Use ohbot.setVoice() to set the voice depending on the synthesizer:
 
 <b>SAPI</b>
 
--a0 to -a100 for amplitude
--r-10 to r10 for rate
--v any part of the name of a SAPI voice e.g. -vHazel, -vZira
-e.g. "-a82 -r12 -vzira"
+-a0 to -a100 for amplitude<br>
+-r-10 to r10 for rate<br>
+-v any part of the name of a SAPI voice e.g. -vHazel, -vZira<br>
+e.g. "-a82 -r12 -vzira"<br>
 
 <b>ESPEAK</b>
 
-http://espeak.sourceforge.net/commands.html
--v followed by a letter code - look in program files\espeak\espeak-data\voices to see what's available
-+m1 to +m7 for male voices
-+f1 to +f4 for female voices
-+croak or +whisper
--a for amplitude (0 to 200)
--s for speed 80 to 500
--p for pitech 0 to 99
-e.g. “-ven+croak” for English croaky voice or “-vzh+m2 -s260” for fast Chinese male.
+http://espeak.sourceforge.net/commands.html<br>
+-v followed by a letter code - look in program files\espeak\espeak-data\voices to see what's available<br>
++m1 to +m7 for male voices<br>
++f1 to +f4 for female voices<br>
++croak or +whisper<br>
+-a for amplitude (0 to 200)<br>
+-s for speed 80 to 500<br>
+-p for pitech 0 to 99<br>
+e.g. “-ven+croak” for English croaky voice or “-vzh+m2 -s260” for fast Chinese male.<br>
 
 <b>ESPEAK-NG</b>
 
