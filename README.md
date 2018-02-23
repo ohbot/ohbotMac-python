@@ -6,7 +6,7 @@
 Background
 -----
 
-These instructions allow you to program your Windows Ohbot or Raspberry Pi Ohbot using Python on a Windows PC.
+These instructions allow you to program your Ohbot using Python on a Windows PC.
 
 More information about Ohbot can be found on [ohbot.co.uk.](http://www.ohbot.co.uk)
 
@@ -19,7 +19,7 @@ Install latest version of Python from [here.](https://www.python.org/downloads/r
 
 <a href="https://github.com/ohbot/ohbotWin-python/blob/master/images/image1-22.png" target="_blank"><img src="https://github.com/ohbot/ohbotWin-python/blob/master/images/image1-22.png" border="0" width = "80%"/></a>
 
-I chose version 3.6 Windows x86-64 executable installer.
+We chose version 3.6 Windows x86-64 executable installer.
 
 During the Install make sure that the pip option is selected
 
@@ -31,9 +31,7 @@ Once install is complete type “Command” into the Windows search box.  Right 
 
 <br>
 
-This will open a command prompt window.  Navigate to the location where pip is installed.  I did this by typing the following:
-
-``Cd \program files\python36\scripts``
+This will open a command prompt window. 
 
 Type the folloing:
 
@@ -106,7 +104,7 @@ Hardware
 Required:
 
 
-* PC Running windows (? and up)
+* PC Running Windows.
 * Ohbot
 * USB Y Cable
 * USB Power Socket Adaptor
