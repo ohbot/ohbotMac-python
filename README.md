@@ -1,4 +1,4 @@
-# Ohbot for Python (Windows Version)
+# Ohbot for Python (Mac Version)
 
 <a href="http://whoosh.co.uk/ohbothelp/images/eyes.gif" target="_blank"><img src="http://whoosh.co.uk/ohbothelp/images/eyes.gif" border="0" width = "30%"/></a>
 
@@ -6,7 +6,7 @@
 Background
 -----
 
-These instructions allow you to program your Ohbot using Python on a Windows PC.
+These instructions allow you to program your Ohbot using Python on a Mac.
 
 More information about Ohbot can be found on [ohbot.co.uk.](http://www.ohbot.co.uk)
 
@@ -16,78 +16,34 @@ Setup
 
 Install the latest version of Python from [here.](https://www.python.org/downloads/release/python-364/)
 
-
-<a href="https://github.com/ohbot/ohbotWin-python/blob/master/images/image1-22.png" target="_blank"><img src="https://github.com/ohbot/ohbotWin-python/blob/master/images/image1-22.png" border="0" width = "65%"/></a>
-
-We chose version 3.6 Windows x86-64 executable installer.
-
 During the Install make sure that the pip option is selected
 
-Once install is complete type “Command” into the Windows search box.  Right click on <b>Command Prompt </b> and select <b>Run as administrator.</b>
+Open the Terminal app and type the folloing:
 
-<br>
+``sudo pip3 install ohbotMac``
 
-<a href="https://github.com/ohbot/ohbotWin-python/blob/master/images/image2-24.tif" target="_blank"><img src="https://github.com/ohbot/ohbotWin-python/blob/master/images/image2-24.tif" border="0" width = "35%"/></a>
-
-<br>
-
-This will open a command prompt window. 
-
-Type the folloing:
-
-``pip install ohbotWin``
-
-
-Installing more voices (optional)
---------
-
-The Ohbot Python library will default to using SAPI voices which are the voices that are available through Windows Control Panel:Speech Propeties.
-
-You can change this to espeak or espeak-ng by calling ohbot.setSynthesiser (“espeak”) or ohbot.setSynthesizer (“espeak-ng”).
-
-Install the espeak library from [here.](http://espeak.sourceforge.net/download.html)
-
-
-Install espeak and then copy the espeak.exe file in Windows File Explorer from 
-
-C:\Program Files (x86)\eSpeak\command_line
-
-To 
-
-C:\Program Files\Python36
-
-To use the espeak-ng library install it from [here.](https://github.com/espeak-ng/espeak-ng#binaries)
-
-Install espeak-ng and then copy the espeak-ng.exe and espeak-ng.dll files in Windows File Explorer from 
-
-C:\Program Files\eSpeak NG
-
-To 
-
-C:\Program Files\Python36
-
-That should be it for the setup.
 
 Dependencies
 ----------
 
-The ``pip install ohbotWin`` command will install the following libraries:
+The ``pip3 install ohbotWin`` command will install the following libraries:
 
 
 | Library    | Use         | Terminal command to install  |Link |
 | ---------- |-------------| -----------------------------|-----|
-| ohbotWin   | Interface with Ohbot          | ```pip install ohbotWin```  |[ohbot](https://github.com/ohbot/ohbotWin-python/) 
-| serial    | Communicate with serial port| ```pip install pyserial```  |[pyserial](https://github.com/pyserial/pyserial/) |
-| lxml    | Import settings file          | ```pip install lxml```  |[lxml](https://github.com/lxml/lxml) |
-| comtypes    | Required for serial communication      | ```pip install comtypes```  | [comtypes](https://github.com/enthought/comtypes) |
+| ohbotMac   | Interface with Ohbot          | ```pip3 install ohbotMac```  |[ohbot](https://github.com/ohbot/ohbotWin-python/) 
+| serial    | Communicate with serial port| ```pip3 install pyserial```  |[pyserial](https://github.com/pyserial/pyserial/) |
+| lxml    | Import settings file          | ```pip3 install lxml```  |[lxml](https://github.com/lxml/lxml) |
+| playsound    | Play sound files       | ```pip3 install playsound```  |[playsound](https://github.com/TaylorSMarks/playsound) |
+
 
 
 To upgrade to the latest version of the library run the following in the console:
-```pip install ohbotWin -- upgrade```
+```sudp pip3 install ohbotMac -- upgrade```
 
 
 
-Ohbot library files (these will be installed with the `pip install ohbotWin` command above):
+Ohbot library files (these will be installed with the `sudp pip3 install ohbotMac` command above):
 
 | File    | Use         |
 | ---------- |------------|
@@ -104,7 +60,7 @@ Hardware
 Required:
 
 
-* PC Running Windows.
+* Mac running OSX
 * Ohbot
 * USB Y Cable
 * USB Power Socket Adaptor
@@ -114,18 +70,14 @@ Required:
 Setup:
 
 
-Plug the middle of USB Y cable into the PC and the other large USB plug into the power adaptor. Then plug the mini USB into Ohbot.
+Plug the middle of USB Y cable into the PC and the other large USB plug into the power adaptor. Then plug the mini USB into Ohbot. (Note with newer devices the power adaptor may not be required.)
 
 ---
 
 Starting Python Programs
 --------
 
-Go to the Windows Menu and run IDLE from the Python folder:
-
-
-<a href="https://github.com/ohbot/ohbotWin-python/blob/master/images/image3-26.tif" target="_blank"><img src="https://github.com/ohbot/ohbotWin-python/blob/master/images/image3-26.tif" border="0" width = "35%"/></a>
-
+Open IDLE. 
 
 Select <b>New</b> from the <b>File menu.</b>
 
@@ -306,72 +258,53 @@ ohbot.move(ohbot.HEADTURN, reading)
 ohbot.setSynthesizer(synth)
 ----------
 
-| synth | Full Name |
-|----|-------- |
-| “sapi” | SAPI speech |
-| “espeak-ng” | espeak-ng speech |
-| “espeak” | espeak speech |
-
-
-For Example:
-```python
-ohbot.setSynthesizer("espeak")
-```
-
-Note that the SAPI speech uses the voices available in Control Panel:Text to Speech.   It can’t use Cortana voices.
+Allows override of default OSX say command. 
 
 
 ohbot.setVoice(voice)
 ------
 
-Use ohbot.setVoice() to set the voice depending on the synthesizer:
+Use ohbot.setVoice() to set the voice:
 
-<b>Using SAPI</b>
-
-Use any of the following arguments:
-
-| Name| Description|
-| --- |------|
-| -a0 to -a100   | amplitude |
-| -r-10 to r10   | rate |
-| -v any part of the name of a SAPI voice (eg. -vHazel or -vZira) | voice |
+```
+say -v ?
+```
 
 For Example:
 ```python
-reading = ohbot.readSensor(3)
 
-ohbot.setVoice("-a82 -r12 -vzira")
+ohbot.setVoice("Oliver")
+ohbot.say("Hello this is Oliver")
+ohbot.setVoice("Kate")
+ohbot.say("Hello this is Kate")
+```
+Available voices can be found in System Preferences -> Accessibility -> Speech in the System Voice Menu. Click customize to view voices in other languages. 
 
+<a href="https://github.com/ohbot/ohbotMac-python/blob/master/images/Screen%20Shot%202018-02-24%20at%2023.53.56.png" target="_blank"><img src="https://github.com/ohbot/ohbotMac-python/blob/master/images/Screen%20Shot%202018-02-24%20at%2023.53.56.png" border="0" width = "30%"/></a>
+
+<a href="https://github.com/ohbot/ohbotMac-python/blob/master/images/Screen%20Shot%202018-02-24%20at%2023.54.07.png" target="_blank"><img src="https://github.com/ohbot/ohbotMac-python/blob/master/images/Screen%20Shot%202018-02-24%20at%2023.54.07.png" border="0" width = "30%"/></a>
+
+A full list of voices can also be displayed by entering the following command in Terminal:
+
+
+ohbot.speechSpeed(params)
+------
+
+Use ohbot.speechSpeed() to set speech rate in words per minute:
+
+Range: (int) 90+
+
+
+For Example:
+```python
+
+ohbot.setVoice("Oliver")
+ohbot.speechSpeed(90)
+ohbot.say("Hello this is Oliver Slow")
+ohbot.speechSpeed(400)
+ohbot.say("Hello this is Oliver Fast")
 ```
 
-<b>Using ESPEAK</b>
-
-http://espeak.sourceforge.net/commands.html<br>
-
-| Name| Description|
-| --- |------|
-| -v followed by a letter code|look in program files\espeak\espeak-data\voices to see what's available|
-|   +m1 to m7   | male voices |
-|   +f1 to f4   | remale voices |
-|   +croak or whisper   | tone |
-|   -a0 to a200   | amplitude |
-|   -s80 to s500   | speed |
-|   -p0 to p99   | pitch |
-
-
-Examples:<br>
-
-| Command | Result |
-| ------ | ------- |
-| ``ohbot.setVoice("-ven+croak")`` | English croaky voice |
-| ``ohbot.setVoice("-vzh+m2 -s26")`` | Chinese male voice, Fast |
-| ``ohbot.setVoice("-vfr+f1 -p99 -s180")`` | French female whisper voice, medium speed and high pitched |
-
-More examples can be found in our [voices example program.](https://github.com/ohbot/ohbotWin-python/blob/master/examples/voices.py)
-
-<b>Using ESPEAK-NG</b>
-
-Supports some of the ESPEAK parameters but some are missing.
 
 
 
