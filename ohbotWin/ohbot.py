@@ -10,10 +10,10 @@ import sys
 import wave
 import subprocess
 from lxml import etree
-import winsound
 import re
-# For SAPI speech
-from comtypes.client import CreateObject
+from playsound import playsound
+
+
 
 # define constants for motors
 HEADNOD = 0
@@ -29,16 +29,21 @@ sensors = [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
 
 # define a module level variable for the serial port
 port=""
+
 # define library version
-version ="2.2"
-global writing, voice, synthesizer
-# flag to stop writing when writing for threading
-writing = False
+version ="1.0"
+
+global voice, synthesizer, speechRate
 # global to set the params to speech synthesizer which control the voice
-voice = ""
+voice = "Alex"
+
+#global to set the speech speed. 
+speechRate = 170
+
 # Global flag to use a synthesizer other than sapi.
 # If it's not sapi then it needs to support -w parameter to write to file e.g. espeak or espeak-NG
-synthesizer = "sapi"
+synthesizer = "say -o "
+
 
 ser = None
 
@@ -50,72 +55,32 @@ def is_digit(n):
     except ValueError:
         return  False
     
-# Function to parse SAPI settings from voice overrid
-# -a0 to -a100 for amplitude
-# -r-10 to r10 for rate
-# -v any part of the name of a SAPI voice e.g. -vHazel, -vZira
-# e.g. "-a82 -r12 -vzira"
-def ParseSAPIVoice(flag):
-    pos = voice.find("-" + flag)
-    val = ""
-    if (pos != None):
-        val = voice[pos+2:]
-        pos = val.find(" ")
-        if ((pos != None) and (pos > 0)):
-            val = val[:pos]
-    
-    return val
-
 # speak depending on synthesizer
 def speak(text):
-    if ("sapi" in synthesizer.lower()):
-        from comtypes.gen import SpeechLib
-        global sapivoice,sapistream
-        sapistream.Open("ohbotspeech.wav", SpeechLib.SSFMCreateForWrite)
-        sapivoice.AudioOutputStream = sapistream
-
-        #set any parameters
-        sa = ParseSAPIVoice ("a");
-        if is_digit(sa):
-            sapivoice.Volume = int(sa)
-        else:
-            sapivoice.Volume = 100
-        sr = ParseSAPIVoice ("r")
-        if is_digit(sr):
-            sapivoice.Rate = int(sr)
-        else:
-            sapivoice.Rate = 0
-        sv = ParseSAPIVoice ("v");
-        # Default voice is always first in the list
-        if (sv == ''):
-            sapivoice.voice = sapivoice.GetVoices()[0]
-        else:
-            for v in sapivoice.GetVoices():
-                if (sv.lower() in v.GetDescription().lower()):
-                    sapivoice.voice = v        
-
-        sapivoice.Speak(text)
-        sapistream.Close()
-    else:
+   
         # Remove any characters that are unsafe for a subprocess call
         safetext = re.sub(r'[^ .a-zA-Z0-9?\']+', '', text)
-        bashcommand = synthesizer + ' -w ohbotspeech.wav ' + voice + ' "' + safetext + '"'
-        # Execute bash command.
-        subprocess.call(bashcommand,shell=True)
 
+        bashcommand = synthesizer + 'ohbotspeech.wav --file-format=RF64 --data-format=LEI16@22050 -r' + str(speechRate) + ' -v ' + voice + ' "' + safetext + '"'  
+
+        # Execute bash command.
+        ret = subprocess.Popen(bashcommand,shell=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
+
+        #for line in ret.stdout.readlines():
+            #print (line)
+            
+        retval = ret.wait()
+        #print(retval)
         
 def init(portName):
     # pickup global instances of port, ser and sapi variables   
     global port,ser,sapivoice,sapistream
 
-    sapivoice = CreateObject("SAPI.SpVoice")
-    sapistream = CreateObject("SAPI.SpFileStream")
-    
+    playsound('Silence1.wav')
     # Search for the Ohbot serial port 
     ports = list(serial.tools.list_ports.comports())
     for p in ports:
-        # print ("p0:" + p[0])
-        # print ("p1:" + p[1])
+        
         # If port has Ohbot connected save the location
         if portName in p[1]:
             port = p[0]
@@ -182,7 +147,7 @@ for child in root:
         motorRev[index] = rev
         
 # initialise with any port that has USB Serial Device in the name
-init("USB Serial Device")
+init("usbmodem")
 
 # Function to move Ohbot's motors. Arguments | m (motor) → int (0-6) | pos (position) → int (0-10) | spd (speed) → int (0-10) **eg move(4,3,9) or move(0,9,3)**
 def move(m, pos, spd=3):
@@ -221,18 +186,8 @@ def move(m, pos, spd=3):
     motorPos[m] = pos  
  
 # Function to write to serial port
-# The serial port write_timeout doesn't work reliably on multiple threads so this
-# blocks using a global variable
 def serwrite(s):
-    global writing
-    # wait until previous write is finished
-    while (writing):
-        pass
-        # print ('waiting on write')
-
-    writing = True
     ser.write(s.encode('latin-1')) 
-    writing = False
     
 
 # Function to attach Ohbot's motors. Argument | m (motor) int (0-6)
@@ -261,18 +216,23 @@ def getPos(m, pos):
     return scaledPos + motorMins[m]
 
 # Function to set the voice used by the synthesiser
-# params - dependent on which synthesizer is used
-# for espeak use parameters e.g. -ven+f4 for a uk female voice - see http://espeak.sourceforge.net/commands.html
-# for sapi see ParseSAPIVoice above
+# name - run 'say -v ?' in terminal to find available names.
+# speed - speech rate in words per min.
 # This override will stay in use until it's next called
-def setVoice(params):
+def setVoice(name = voice):
     global voice
-    voice = params
-
+    voice = name
+    
+    
 # Function to set a different speech synthesizer - defaults to sapi
 def setSynthesizer(params):
     global synthesizer
     synthesizer = params
+    
+# Set the speed of the speech in words per min.
+def speechSpeed(params):
+    global speechRate
+    speechRate = params
 
 # Function to make Ohbot Speak. Arguments | text String "Hello World" **eg say("Hello my name is Ohbot") or
 # untilDone - wait in function until speech is complete, lipSync - move lips in time with speech, hdmiAudio - adds a delay to give hdmi channel time to activate.
@@ -284,7 +244,7 @@ def say(text, untilDone = True, lipSync=True, hdmiAudio = False, soundDelay = 0)
 
     # Create a bash command with the desired text. espeak.exe or another synthesizer must be in the current folder.  the -w parameter forces the speech to a file
     speak (text)
-
+    
     # open the file to calculate visemes. Festival on RPi has this built in but for espeak need to do it manually
     waveFile = wave.open('ohbotspeech.wav', 'r')
 
@@ -294,7 +254,7 @@ def say(text, untilDone = True, lipSync=True, hdmiAudio = False, soundDelay = 0)
     bytespersample = waveFile.getsampwidth()
 
     # How many samples per second for mouth position
-    VISEMESPERSEC = 20
+    VISEMESPERSEC = 10
 
     # How many samples in 1/20th second
     # print ('framerate:', framerate, ' channels:', channels, ' length:', length, ' bytespersample:', bytespersample)
@@ -379,9 +339,9 @@ def limit(val):
 # Function to play back the speech wav file, if hmdi audio is being used play silence before speech sound
 def saySpeech(addSilence):
     if addSilence:
-        winsound.PlaySound('Silence1.wav\nohbotspeech.wav', winsound.SND_FILENAME)        
+        playsound('Silence1.wav\nohbotspeech.wav')        
     else:
-        winsound.PlaySound('ohbotspeech.wav', winsound.SND_FILENAME)        
+        playsound('ohbotspeech.wav')        
    
 # Function to move Ohbot's lips in time with speech. Arguments | phonemes → list of phonemes[] | waits → list of waits[]
 def moveSpeech(phonemes, times):
