@@ -1,7 +1,7 @@
 ##Example of ohbot intergrated with wolfram alpha and wikipedia web service
 
 import wolframalpha
-from ohbotWin import ohbot
+from ohbotMac import ohbot
 from random import *
 import threading
 
