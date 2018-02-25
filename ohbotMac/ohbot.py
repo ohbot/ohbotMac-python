@@ -75,8 +75,10 @@ def speak(text):
 def init(portName):
     # pickup global instances of port, ser and sapi variables   
     global port,ser,sapivoice,sapistream
-
-    playsound('Silence1.wav')
+    
+    dir = os.path.dirname(os.path.abspath(__file__))
+    silenceFile = os.path.join(dir, 'Silence.wav')
+    playsound(silenceFile)
     # Search for the Ohbot serial port 
     ports = list(serial.tools.list_ports.comports())
     for p in ports:
@@ -338,9 +340,6 @@ def limit(val):
 
 # Function to play back the speech wav file, if hmdi audio is being used play silence before speech sound
 def saySpeech(addSilence):
-    if addSilence:
-        playsound('Silence1.wav\nohbotspeech.wav')        
-    else:
         playsound('ohbotspeech.wav')        
    
 # Function to move Ohbot's lips in time with speech. Arguments | phonemes → list of phonemes[] | waits → list of waits[]
