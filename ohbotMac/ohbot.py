@@ -77,7 +77,8 @@ def init(portName):
     global port,ser,sapivoice,sapistream
     
     dir = os.path.dirname(os.path.abspath(__file__))
-    silenceFile = os.path.join(dir, 'Silence.wav')
+    silenceFile = os.path.join(dir, 'Silence1.wav')
+    
     playsound(silenceFile)
     # Search for the Ohbot serial port 
     ports = list(serial.tools.list_ports.comports())
