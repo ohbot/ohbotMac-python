@@ -36,11 +36,12 @@ The ``pip3 install ohbotWin`` command will install the following libraries:
 
 
 To upgrade to the latest version of the library run the following in the console:
+<br>
 ```sudo pip3 install ohbotMac -- upgrade```
 
 
 
-Ohbot library files (these will be installed with the `sudp pip3 install ohbotMac` command above):
+Ohbot library files (these will be installed with the `sudo pip3 install ohbotMac` command above):
 
 | File    | Use         |
 | ---------- |------------|
