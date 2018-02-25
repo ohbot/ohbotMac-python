@@ -23,7 +23,7 @@ Open the Terminal app and type the folloing:
 Dependencies
 ----------
 
-The ``pip3 install ohbotWin`` command will install the following libraries:
+The ``pip3 install ohbotMac`` command will install the following libraries:
 
 
 | Library    | Use         | Terminal command to install  |Link |
@@ -94,7 +94,7 @@ Functions
 ohbot.init(portName)
 ----------
 
-Called internally looking for a port with name containing "USB Serial Device" but if your port is different you can call it and override this port name. It returns True if the port is found and opened successfully, otherwise it returns false. This is likely with a versions of Windows in languages other than English. 
+Called internally looking for a port with name containing "USB Serial Device" but if your port is different you can call it and override this port name. It returns True if the port is found and opened successfully, otherwise it returns false. This is likely with a versions of OSX in languages other than English. 
 
 ohbot.move(m, pos, speed=3)
 ----------
