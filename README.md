@@ -79,13 +79,13 @@ Open IDLE.
 
 Select <b>New</b> from the <b>File menu.</b>
 
-Go to the [hellworldohbot](https://github.com/ohbot/ohbotWin-python/blob/master/examples/helloworldohbot.py) example on Github, copy the code and paste it into the new Python window.
+Go to the [hellworldohbot](https://github.com/ohbot/ohbotMac-python/blob/master/examples/helloworldohbot.py) example on Github, copy the code and paste it into the new Python window.
 
 Select <b>Run Module</b> from the <b>Run</b> menu.
 
 Ohbot should speak and move.
 
-More example programs can be found [here.](https://github.com/ohbot/ohbotWin-python/tree/master/examples)
+More example programs can be found [here.](https://github.com/ohbot/ohbotMac-python/tree/master/examples)
 
 
 Functions
