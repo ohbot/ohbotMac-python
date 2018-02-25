@@ -10,7 +10,7 @@ setup(
     author = 'ohbot',
     author_email = 'info@ohbot.co.uk',
     url = 'https://github.com/ohbot/ohbotWin-python',
-    download_url = 'https://github.com/ohbot/ohbotMac-python/archive/1.tar.gz',
+    download_url = 'https://github.com/ohbot/ohbotMac-python/archive/1.1.tar.gz',
     keywords = ['ohbot', 'robot'],
     classifiers = [],
     install_requires=[
