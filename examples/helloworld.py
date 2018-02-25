@@ -1,6 +1,6 @@
 # import the ohbot module
 
-from ohbotWin import ohbot
+from ohbotMac import ohbot
 
 # Reset Ohbot
 ohbot.reset()
