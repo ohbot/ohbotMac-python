@@ -5,7 +5,7 @@ setup(
     packages = ['ohbotMac'],
     package_data={'': ['MotorDefinitionsv21.omd','Silence1.wav']},
     include_package_data=True,
-    version = '1.0',  
+    version = '1.1',  
     description = 'python library for controlling Ohbot on a Mac',
     author = 'ohbot',
     author_email = 'info@ohbot.co.uk',
