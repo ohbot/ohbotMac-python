@@ -4,3 +4,4 @@ setup.py
 ohbot/__init__.py
 ohbot/ohbot.py
 ohbot/MotorDefinitionsv21.omd
+Silence1.wav
