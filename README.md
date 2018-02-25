@@ -39,7 +39,7 @@ The ``pip3 install ohbotWin`` command will install the following libraries:
 
 
 To upgrade to the latest version of the library run the following in the console:
-```sudp pip3 install ohbotMac -- upgrade```
+```sudo pip3 install ohbotMac -- upgrade```
 
 
 
@@ -266,10 +266,6 @@ ohbot.setVoice(voice)
 
 Use ohbot.setVoice() to set the voice:
 
-```python
-say -v ?
-```
-
 For Example:
 ```python
 
@@ -286,6 +282,7 @@ Available voices can be found in System Preferences -> Accessibility -> Speech i
 
 A full list of voices can also be displayed by entering the following command in Terminal:
 
+```say -v ?```
 
 ohbot.speechSpeed(params)
 ------
