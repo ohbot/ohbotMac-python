@@ -16,12 +16,9 @@ Setup
 
 Install the latest version of Python from [here.](https://www.python.org/downloads/release/python-364/)
 
-During the Install make sure that the pip option is selected
-
 Open the Terminal app and type the folloing:
 
 ``sudo pip3 install ohbotMac``
-
 
 Dependencies
 ----------
