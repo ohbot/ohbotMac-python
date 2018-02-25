@@ -75,7 +75,7 @@ Plug the middle of USB Y cable into the PC and the other large USB plug into the
 Starting Python Programs
 --------
 
-Open IDLE. 
+Open <b>IDLE.</b> 
 
 Select <b>New</b> from the <b>File menu.</b>
 
