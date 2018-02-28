@@ -341,7 +341,13 @@ def limit(val):
 
 # Function to play back the speech wav file, if hmdi audio is being used play silence before speech sound
 def saySpeech(addSilence):
-        playsound('ohbotspeech.wav')        
+    
+    if addSilence:            
+        dir = os.path.dirname(os.path.abspath(__file__))
+        silenceFile = os.path.join(dir, 'Silence1.wav')       
+        playsound(silenceFile)
+        
+     playsound('ohbotspeech.wav')        
    
 # Function to move Ohbot's lips in time with speech. Arguments | phonemes → list of phonemes[] | waits → list of waits[]
 def moveSpeech(phonemes, times):
