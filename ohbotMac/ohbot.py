@@ -347,7 +347,7 @@ def saySpeech(addSilence):
         silenceFile = os.path.join(dir, 'Silence1.wav')       
         playsound(silenceFile)
         
-     playsound('ohbotspeech.wav')
+    playsound('ohbotspeech.wav')
    
 # Function to move Ohbot's lips in time with speech. Arguments | phonemes → list of phonemes[] | waits → list of waits[]
 def moveSpeech(phonemes, times):
