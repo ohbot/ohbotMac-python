@@ -14,6 +14,6 @@ setup(
     keywords = ['ohbot', 'robot'],
     classifiers = [],
     install_requires=[
-          'pyserial','lxml','playsound',
+          'pyserial','lxml','playsound','pyobjc',
       ],
 )
