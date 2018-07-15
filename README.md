@@ -32,7 +32,7 @@ The ``pip3 install ohbotMac`` command will install the following libraries:
 | serial    | Communicate with serial port| ```pip3 install pyserial```  |[pyserial](https://github.com/pyserial/pyserial/) |
 | lxml    | Import settings file          | ```pip3 install lxml```  |[lxml](https://github.com/lxml/lxml) |
 | playsound    | Play sound files       | ```pip3 install playsound```  |[playsound](https://github.com/TaylorSMarks/playsound) |
-| pyobjc    | python objective c library       | ```pip3 install objc```  |[pyobjc](https://pypi.org/project/pyobjc/) |
+| pyobjc    | Python Objective C library       | ```pip3 install objc```  |[pyobjc](https://pypi.org/project/pyobjc/) |
 
 
 
