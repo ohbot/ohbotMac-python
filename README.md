@@ -20,9 +20,9 @@ Open the Terminal app and type the folloing:
 
 ``sudo pip3 install ohbotMac``
 
-You can find the terminal app by searching terminal in spotlight.
+You can find the Terminal app by searching for it in spotlight.
 
-<a href="https://github.com/ohbot/ohbotMac-python/blob/master/images/Screen%20Shot%202018-07-16%20at%2015.22.56.png" target="_blank"><img src="https://github.com/ohbot/ohbotMac-python/blob/master/images/Screen%20Shot%202018-07-16%20at%2015.22.56.png" border="0" width = "30%"/></a>
+<a href="https://github.com/ohbot/ohbotMac-python/blob/master/images/Screen%20Shot%202018-07-16%20at%2015.22.56.png" target="_blank"><img src="https://github.com/ohbot/ohbotMac-python/blob/master/images/Screen%20Shot%202018-07-16%20at%2015.22.56.png" border="0" width = "60%"/></a>
 
 Dependencies
 ----------
