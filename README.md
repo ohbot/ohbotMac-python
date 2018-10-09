@@ -42,7 +42,7 @@ The ``pip3 install ohbotMac`` command will install the following libraries:
 
 To upgrade to the latest version of the library run the following in the console:
 <br>
-```sudo pip3 install ohbotMac -- upgrade```
+```sudo pip3 install ohbotMac --upgrade```
 
 
 
