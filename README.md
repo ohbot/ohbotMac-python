@@ -1,4 +1,7 @@
-# Ohbot for Python (Mac Version)
+The main [ohbot-python](https://github.com/ohbot/ohbot-python) library now supports Mac so this version is deprecated. All future development will be on [ohbot-python](https://github.com/ohbot/ohbot-python). 
+
+
+# Ohbot for Python (Mac Version) - ****Deprecated****
 
 <a href="http://whoosh.co.uk/ohbothelp/images/eyes.gif" target="_blank"><img src="http://whoosh.co.uk/ohbothelp/images/eyes.gif" border="0" width = "30%"/></a>
 
